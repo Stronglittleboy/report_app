@@ -1,4 +1,4 @@
-import 'package:report_app/dto/UserInfo.dart';
+import 'package:report_app/dto/user_info.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 userInfoFromJson(UserInfo data, Map<String, dynamic> json) {

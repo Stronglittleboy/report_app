@@ -14,7 +14,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Material(child: Column(
       children: [
         Align(
           alignment: FractionalOffset(0.95, 0.8),
@@ -71,7 +71,6 @@ class _LoginState extends State<Login> {
                       error = v.trim().length > 0 ? null : "密码不能为空";
                       error = v.trim().length < 9 ? null : "密码长度不能小于6位";
                       return error;
-
                     },
                     onSaved: (v) {
                       password = v;
@@ -80,6 +79,7 @@ class _LoginState extends State<Login> {
                   TextButton(onPressed: (){
                     ProductService service = ProductService();
                     service.login(username, password, "mock");
+                    Navigator.pushNamed(context, "/product_list");
                   }, child: Text("登录"))
                 ],
               ),
@@ -87,6 +87,6 @@ class _LoginState extends State<Login> {
           ),
         )
       ],
-    );
+    ),);
   }
 }

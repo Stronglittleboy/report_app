@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '粤鑫纸业',
-      home: Material(
-        child: Login(),
-      ),
+      home:Login(),
       initialRoute: '/',
       onGenerateRoute: onGenerateRoute,
     );

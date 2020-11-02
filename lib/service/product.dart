@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import '../dto/UserInfo.dart';
+import '../dto/user_info.dart';
+import '../dto/product.dart';
 
 class ProductService {
   final String loginUrl = "/login";
@@ -11,9 +12,17 @@ class ProductService {
     var userInfo = UserInfo(userName: userName, password: password);
     userInfo.realName = "李白";
     var loginDTO = jsonEncode(userInfo);
-    print(loginDTO);
     var r = await dio.post(serverPath, data: loginDTO);
-    print(r);
     return userInfo;
+  }
+
+  Future<List<Product>> productList(String password,
+      String serverPath) async {
+    List<Product> productList = [
+      Product(productName: "测试1",num: 20,specification: "测试描述",color: "红色"),
+      Product(productName: "测试2",num: 30,specification: "测试描述",color: "绿色"),
+      Product(productName: "测试3",num: 40,specification: "测试描述",color: "蓝色")
+    ];
+    return productList;
   }
 }

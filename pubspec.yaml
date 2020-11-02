@@ -45,6 +45,9 @@ dev_dependencies:
   json_serializable: ^3.5.0
   #添加Sqflite依赖
   shared_preferences: ^0.5.12+2
+  gzx_dropdown_menu : ^2.0.0
+  dependencies:
+  flutter_dropdown: ^0.0.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
