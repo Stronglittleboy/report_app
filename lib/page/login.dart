@@ -71,6 +71,7 @@ class _LoginState extends State<Login> {
                       error = v.trim().length > 0 ? null : "密码不能为空";
                       error = v.trim().length < 9 ? null : "密码长度不能小于6位";
                       return error;
+
                     },
                     onSaved: (v) {
                       password = v;
